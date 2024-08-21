@@ -9,50 +9,53 @@ import EastIcon from '@mui/icons-material/East';
 // MUI icons end here 
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
 
-    const [toggle, settoggle]= useState(false);
-      function handletoggle () {
-            settoggle(!toggle);
-      }
+  const [toggle, settoggle] = useState(false);
+  function handletoggle() {
+
+    settoggle(!toggle);
+
+  };
 
   return (
     <>
-    <aside className="w-1/5 h-screen bg-white flex items-center justify-evenly flex-col fixed ">
+      <aside className={` bg-white h-screen flex items-center justify-evenly flex-col fixed m-3 rounded-2xl duration-500 ${toggle ? " w-1/5  " : "w-20"} `}>
 
-   <div className="top-sidebar-wrapper w-full h-16 bg-orange-400 flex items-center justify-between relative">
-   <div className="bg-amber-700 text-xl p-2">Home Expense Tracker</div>
+        <div className={`top-sidebar-wrapper w-11/12 h-16 bg-orange-400 flex items-center  relative ${toggle ? "justify-between duration-500" : "justify-center"}`}>
+          <div className={`bg-amber-700  ${toggle ? " block duration-700 " : "hidden"} `}> <span className='text-base p-2'> Home Expense Tracker </span></div>
 
-   <button id="toggle-sidebar" className="w-11 h-8 bg-red-400" onClick={handletoggle}>
+          <button id="toggle-sidebar" className= {`w-11 h-8 bg-lime-700 duration-100 ${toggle? "hover:pr-2 rounded-l-[15px]":"hover:pl-2 rounded-r-[15px]" }  `} onClick={handletoggle}>
 
-    {toggle? <WestIcon fontSize="large" /> : <EastIcon fontSize="large"/> }
-    
-         </button>
-   </div>
- 
+            {toggle ? <WestIcon fontSize="large" /> : <EastIcon fontSize="large" />}
 
-
-    <div className="w-4/5 bg-slate-600 flex items-center">
-       
-       <img src="/images/avatar.png" alt="" id="userpic" className="w-12 h-12 m-3 rounded-full bg-lime-600" />
-       <div id="username" className="text-sm ">Nouman Sheikh</div>
-
-    </div>
+          </button>
+        </div>
 
 
-    <nav className="h-3/5 w-2/3 bg-slate-500 flex items-center justify-center flex-col ">
-        <ul className="w-full h-full bg-amber-300 flex flex-col justify-evenly">
-            <li className="text-lg hover:text-cyan-600"><a href="#"> <HomeIcon/> Dashboard </a></li>
-            <li className="text-lg hover:text-cyan-600"><a href="#"> <CategoryIcon/> Items </a></li>
-            <li className="text-lg hover:text-cyan-600"><a href="#"> <AddShoppingCartIcon/> Shopping List </a></li>
-            <li className="text-lg hover:text-cyan-600"> <a href="#"> <AddCircleOutlineIcon/> Add Items </a></li>
-            <li className="text-lg hover:text-cyan-600"><a href="#"> < LogoutIcon/> Logout </a></li>
-        </ul>
-    </nav>
 
-    </aside>
-    
+        <div className="w-4/5 bg-slate-600 flex items-center">
+
+          <img src="/images/avatar.png" alt="" id="userpic" className="w-12 h-12 m-3 rounded-full bg-lime-600" />
+          <div id="username" className={`text-sm ${toggle ? "block" : "hidden"} `}>Nouman Sheikh</div>
+
+        </div>
+
+
+        <nav className="h-3/5 w-2/3 bg-slate-500 flex items-center justify-center flex-col ">
+          <ul className={`w-full h-full bg-amber-300 flex flex-col  ${toggle ? "justify-evenly" : "items-center justify-evenly"} `}>
+            <li className="text-lg hover:text-cyan-600"><Link to="/" > <HomeIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`} > Dashboard </span> </Link></li>
+            <li className="text-lg hover:text-cyan-600"><Link to="/items" > <CategoryIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Items </span> </Link></li>
+            <li className="text-lg hover:text-cyan-600"><Link to="/shopping-list" > <AddShoppingCartIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Shopping List </span> </Link></li>
+            <li className="text-lg hover:text-cyan-600"> <Link to="/add-items" > <AddCircleOutlineIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Add Items </span> </Link></li>
+            <li className="text-lg hover:text-cyan-600"><Link to="/logout" > < LogoutIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Logout </span> </Link> </li>
+          </ul>
+        </nav>
+
+      </aside>
+
     </>
   )
 }
