@@ -9,16 +9,26 @@ import EastIcon from '@mui/icons-material/East';
 // MUI icons end here 
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
 
+  // this func is for to handle sidebar open and close functionality 
   const [toggle, settoggle] = useState(false);
   function handletoggle() {
 
     settoggle(!toggle);
 
   };
+
+
+// this func is for to handle active link text color 
+  function handleactive ({isActive}){
+  //  this isactive prop is coming from navlink by default
+    return{
+      color: isActive? "green": "",
+    }
+  }
 
   return (
     <>
@@ -46,11 +56,11 @@ const Sidebar = () => {
 
         <nav className="h-3/5 w-2/3 bg-slate-500 flex items-center justify-center flex-col ">
           <ul className={`w-full h-full bg-amber-300 flex flex-col  ${toggle ? "justify-evenly" : "items-center justify-evenly"} `}>
-            <li className="text-lg hover:text-cyan-600"><Link to="/" > <HomeIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`} > Dashboard </span> </Link></li>
-            <li className="text-lg hover:text-cyan-600"><Link to="/items" > <CategoryIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Items </span> </Link></li>
-            <li className="text-lg hover:text-cyan-600"><Link to="/shoppinglist" > <AddShoppingCartIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Shopping List </span> </Link></li>
-            <li className="text-lg hover:text-cyan-600"> <Link to="/additems" > <AddCircleOutlineIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Add Items </span> </Link></li>
-            <li className="text-lg hover:text-cyan-600"><Link to="/login" > < LogoutIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Logout </span> </Link> </li>
+            <li className="text-lg hover:text-cyan-600"><NavLink to="/" style={handleactive} > <HomeIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`} > Dashboard </span> </NavLink></li>
+            <li className="text-lg hover:text-cyan-600"><NavLink to="/items" style={handleactive} > <CategoryIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Items </span> </NavLink></li>
+            <li className="text-lg hover:text-cyan-600"><NavLink to="/shoppinglist" style={handleactive} > <AddShoppingCartIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Shopping List </span> </NavLink></li>
+            <li className="text-lg hover:text-cyan-600"> <NavLink to="/additems" style={handleactive} > <AddCircleOutlineIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Add Items </span> </NavLink></li>
+            <li className="text-lg hover:text-cyan-600"><NavLink to="/login" style={handleactive} > < LogoutIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Logout </span> </NavLink> </li>
           </ul>
         </nav>
 
