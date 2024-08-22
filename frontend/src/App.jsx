@@ -1,35 +1,63 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
-import Items from "./pages/items";
+import Items from "./pages/Items";
 import ShoppingList from "./pages/Shopping-List";
 import AddItems from "./pages/Add-Items";
 import Login from "./pages/Login";
+import AppLayout from "./components/Layout/AppLayout";
+
 
 function App() {
-  
 
-  return (
-    <>
-     <Router>
-    <main className="w-full h-screen bg-sky-700">
 
-   <Sidebar/>
-   <Switch>
-      <Route path="/" exact component={Dashboard} />
-      <Route path="/items"  component={Items} />
-      <Route path="/shopping-list"  component={ShoppingList } />
-      <Route path="/add-items"  component={AddItems  } />
-      <Route path="/logout"  component={Login } />
+      const router = createBrowserRouter([
+
+       {
+        path: "/",
+        element: <AppLayout/>,
+        children: [
+
+         {
+          path: "/",
+        element: <Dashboard/>,
+         },
+          {
+            path: "/items",
+            element: <Items/>,
+           },
+    
+           {
+            path: "/shoppinglist",
+            element: <ShoppingList/>,
+           },
+    
+           {
+            path: "/additems",
+            element: <AddItems/>,
+           },
+           {
+            path: "/login",
+            element: <Login/>,
+           },
+    
+        ]
+       },
+
+     
       
+
+      ]);
+
+      return <RouterProvider router={router} />
       
-    </Switch>
+      // return (
+      //    <main className="w-full h-screen bg-sky-700"> 
 
-   </main>
-   </Router>
+      // </main> 
+      // )
+      
 
-   </>
-  )
-}
+};
 
 export default App
