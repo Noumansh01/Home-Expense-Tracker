@@ -5,6 +5,7 @@ import Items from "./pages/Items";
 import ShoppingList from "./pages/Shopping-List";
 import AddItems from "./pages/Add-Items";
 import Login from "./pages/Login";
+import ErrorPage from "./pages/ErrorPage";
 import AppLayout from "./components/Layout/AppLayout";
 
 
@@ -16,6 +17,7 @@ function App() {
        {
         path: "/",
         element: <AppLayout/>,
+        errorElement: <ErrorPage/>,
         children: [
 
          {
