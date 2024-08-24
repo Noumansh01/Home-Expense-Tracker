@@ -56,11 +56,11 @@ const Sidebar = () => {
 
         <nav className="h-3/5 w-2/3 bg-slate-500 flex items-center justify-center flex-col ">
           <ul className={`w-full h-full bg-amber-300 flex flex-col  ${toggle ? "justify-evenly" : "items-center justify-evenly"} `}>
-            <li className="text-lg hover:text-cyan-600"><NavLink to="/" style={handleactive} > <HomeIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`} > Dashboard </span> </NavLink></li>
-            <li className="text-lg hover:text-cyan-600"><NavLink to="/items" style={handleactive} > <CategoryIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Items </span> </NavLink></li>
-            <li className="text-lg hover:text-cyan-600"><NavLink to="/shoppinglist" style={handleactive} > <AddShoppingCartIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Shopping List </span> </NavLink></li>
-            <li className="text-lg hover:text-cyan-600"> <NavLink to="/additems" style={handleactive} > <AddCircleOutlineIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Add Items </span> </NavLink></li>
-            <li className="text-lg hover:text-cyan-600"><NavLink to="/login" style={handleactive} > < LogoutIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Logout </span> </NavLink> </li>
+            <li className="text-lg hover:text-lime-600"><NavLink to="/" style={handleactive} > <HomeIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`} > Dashboard </span> </NavLink></li>
+            <li className="text-lg hover:text-lime-600"><NavLink to="/items" style={handleactive} > <CategoryIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Items </span> </NavLink></li>
+            <li className="text-lg hover:text-lime-600"><NavLink to="/shoppinglist" style={handleactive} > <AddShoppingCartIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Shopping List </span> </NavLink></li>
+            <li className="text-lg hover:text-lime-600"> <NavLink to="/additems" style={handleactive} > <AddCircleOutlineIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Add Items </span> </NavLink></li>
+            <li className="text-lg hover:text-lime-600"><NavLink to="/login" style={handleactive} > < LogoutIcon /> <span className={`${toggle ? "inline-block" : "hidden"}`}>  Logout </span> </NavLink> </li>
           </ul>
         </nav>
 
