@@ -2,7 +2,7 @@
 const Dashboard = () => {
   return (
     <>
-    <h1 className="text-2xl text-blue-800"> HELLO I AM DASHBOARD PAGE</h1>
+    <h1 className="text-2xl text-blue-800"> THIS IS DASHBOARD PAGE</h1>
     
     </>  
   )
