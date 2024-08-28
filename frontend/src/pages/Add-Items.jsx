@@ -2,7 +2,7 @@
 
 const AddItems = () => {
   return (
-    <div className="text-4xl text-blue-800"> Hello i am Add-Items page</div>
+    <div className="text-4xl text-blue-800"> ADD ITEMS HERE</div>
   )
 }
 
