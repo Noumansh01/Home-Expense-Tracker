@@ -49,7 +49,7 @@ const Sidebar = () => {
         <div className="w-4/5 bg-slate-600 flex items-center">
 
           <img src="/images/avatar.png" alt="" id="userpic" className="w-12 h-12 m-3 rounded-full bg-lime-600" />
-          <div id="username" className={`text-sm ${toggle ? "block" : "hidden"} `}>Nouman Sheikh</div>
+          <div id="username" className={`text-sm ${toggle ? "block" : "hidden"} `}>USER NAME</div>
 
         </div>
 
