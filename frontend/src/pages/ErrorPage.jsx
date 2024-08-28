@@ -10,7 +10,7 @@ const ErrorPage = ()=>{
     };
     return(
         <>
-        <h1 className="text-2xl text-red-800">404 Error Page</h1>
+        <h1 className="text-2xl text-red-800">404 ERROR PAGE</h1>
         <button className="w-52 h-10 text-base text-white bg-black hover:text-lime-800 " onClick={handlebtn}>Click to go Previous Page</button>
         </>
     )
