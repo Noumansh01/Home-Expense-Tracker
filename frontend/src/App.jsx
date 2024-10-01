@@ -9,7 +9,7 @@ import ErrorPage from "./pages/ErrorPage";
 import AppLayout from "./components/Layout/AppLayout";
 
 
-function App() {
+const App = () => {
 
 
       const router = createBrowserRouter([
